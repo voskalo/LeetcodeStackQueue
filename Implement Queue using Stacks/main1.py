@@ -1,9 +1,21 @@
 '''Implement Queue using Stacks'''
 
+
+class Node:
+    '''node class'''
+
+    def __init__(self, val):
+        '''node init'''
+
+        self.value = val
+        self.naet = None
+
+
 class MyQueue:
     '''class docstr'''
 
     def __init__(self):
+        '''init'''
         ...
 
     def push(self, x: int) -> None:
