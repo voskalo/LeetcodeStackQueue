@@ -11,6 +11,55 @@ class Node:
         self.naet = None
 
 
+class Stack:
+    '''stack class'''
+
+    def __init__(self):
+        '''init'''
+        self.top = None
+        self._size = 0
+
+
+    def push(self, x: int):
+        '''push funct'''
+        new = Node(x)
+        new.next = self.top
+        self.top = new
+        self._size += 1
+
+    def is_empty(self):
+        '''validation if is empty'''
+
+        return self.top is None
+
+    def pop(self):
+        '''pop funct'''
+
+        if self.is_empty():
+            return None
+
+        val = self.top.value
+        self.top = self.top.next
+        self._size -= 1
+
+        return val
+
+
+    def peek(self):
+        '''peek funct'''
+
+        if self.top:
+            return self.top.value
+        else:
+            return None
+
+    def size(self):
+        '''size funct'''
+        return self._size
+
+
+
+
 class MyQueue:
     '''class docstr'''
 
