@@ -8,7 +8,7 @@ class Node:
         '''node init'''
 
         self.value = val
-        self.naet = None
+        self.next = None
 
 
 class Stack:
@@ -65,19 +65,38 @@ class MyQueue:
 
     def __init__(self):
         '''init'''
-        ...
+        self.in_stack = Stack()
+        self.out_stack = Stack()
+
 
     def push(self, x: int) -> None:
-        ...
+        '''push funct'''
+        self.in_stack.push(x)
+
+
+    def rotate(self):
+        '''rotate funcct'''
+
+        if self.out_stack.is_empty():
+            while not self.in_stack.is_empty():
+                self.out_stack.push(self.in_stack.pop())
+
 
     def pop(self) -> int:
-        ...
+        '''pop funct'''
+        self.rotate()
+        return self.out_stack.pop()
+
 
     def peek(self) -> int:
-        ...
+        '''peek funct'''
+
+        self.rotate()
+        return self.out_stack.peek()
+
 
     def empty(self) -> bool:
-        ...
+        return self.in_stack.is_empty() and self.out_stack.is_empty()
 
 
 # Your MyQueue object will be instantiated and called as such:
