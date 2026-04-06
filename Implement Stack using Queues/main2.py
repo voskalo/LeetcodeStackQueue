@@ -72,22 +72,48 @@ class Queue:
         '''size funct'''
         return self._size
 
+
+
+
+
+
 class MyStack:
 
     def __init__(self):
-        ...
+        '''init'''
+
+        self.q1 = Queue()
+        self.q2 = Queue()
+
 
     def push(self, x: int) -> None:
-        ...
+        '''push funct'''
+        self.q2.push(x)
+
+        while not self.q1.is_empty():
+            self.q2.push(self.q1.pop())
+
+        self.q1, self.q2 = self.q2, self.q1
+
 
     def pop(self) -> int:
-        ...
+        '''pop funct'''
+        return self.q1.pop()
+
+
 
     def top(self) -> int:
-        ...
+        '''return top el '''
+        return self.q1.peek()
+
 
     def empty(self) -> bool:
-        ...
+        '''check if is empty'''
+
+        return self.q1.is_empty()
+
+
+
 
 
 # Your MyStack object will be instantiated and called as such:
