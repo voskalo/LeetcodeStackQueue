@@ -1,3 +1,16 @@
+'''Implement Stack using Queues'''
+
+
+class Node:
+    '''node class'''
+
+    def __init__(self, val):
+        '''init'''
+
+        self.value = val
+        self.next = None
+
+
 class MyStack:
 
     def __init__(self):
