@@ -11,6 +11,37 @@ class Node:
 
 
 
+class Stack:
+    '''stack class'''
+
+    def __init__(self):
+        '''init'''
+
+        self.top_node = None
+
+    def push(self, x: int):
+        '''push funct'''
+
+        new = Node(x)
+        new.next = self.top_node
+        self.top_node = new
+
+    def is_empty(self):
+        '''chech if empty'''
+        return self.top_node is None
+
+
+    def pop(self):
+        '''pop funct'''
+
+        if not self.top_node:
+            return None
+
+        val = self.top_node.value
+        self.top_node = self.top_node.next
+
+        return val
+
 
 
 
