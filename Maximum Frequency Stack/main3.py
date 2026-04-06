@@ -1,5 +1,21 @@
 '''Maximu Frequency Stack'''
 
+class Node:
+    '''node class'''
+
+    def __init__(self, val):
+        '''init'''
+
+        self.value = val
+        self.next = None
+
+
+
+
+
+
+
+
 class FreqStack:
     '''FreqStack class'''
 
